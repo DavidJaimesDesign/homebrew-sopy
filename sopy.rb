@@ -9,7 +9,7 @@ class Sopy < Formula
 
   url "https://github.com/DavidJaimesDesign/SearchSOpy/blob/master/archive/so.tar.gz"
   version "1.0.0"
-  sha256 "4cf2e80427ac4ad3581ce62e722eb17cebd6405f81095755bde2bdd88c26fc65"
+  #sha256 "4cf2e80427ac4ad3581ce62e722eb17cebd6405f81095755bde2bdd88c26fc65"
 
   # depends_on "cmake" => :build
 
