@@ -19,7 +19,7 @@ class Sopy < Formula
   end
 
   include Language::Python::Virtualenv
-  system "python", *Language::Python.setup_install_args(prefix)
+  #system "python", *Language::Python.setup_install_args(prefix)
 
   def install
     virtualenv_install_with_resources 
