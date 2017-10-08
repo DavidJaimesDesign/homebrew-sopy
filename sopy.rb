@@ -13,16 +13,15 @@ class Sopy < Formula
 
   depends_on :python
   
-  resource "pyperclip" do
-    url "https://files.pythonhosted.org/packages/7b/a5/48eaa1f2d77f900679e9759d2c9ab44895e66e9612f7f6b5333273b68f29/pyperclip-1.5.27.zip"
-    sha256 "a3cb6df5d8f1557ca8fc514d94fabf50dc5a97042c90e5ba4f3611864fed3fc5"
-  end
+  #resource "pyperclip" do
+  #  url "https://files.pythonhosted.org/packages/7b/a5/48eaa1f2d77f900679e9759d2c9ab44895e66e9612f7f6b5333273b68f29/pyperclip-1.5.27.zip"
+  #  sha256 "a3cb6df5d8f1557ca8fc514d94fabf50dc5a97042c90e5ba4f3611864fed3fc5"
+  #end
 
   include Language::Python::Virtualenv
   #system "python", *Language::Python.setup_install_args(prefix)
 
   def install
-    #virtualenv_install_with_resources 
 	  # ENV.deparallelize  # if your formula fails when building in parallel
 
     # Remove unrecognized options if warned by configure
@@ -32,7 +31,7 @@ class Sopy < Formula
     #                      "--prefix=#{prefix}"
     ## system "cmake", ".", *std_cmake_args
     #system "make", "install" # if this fails, try separate make/make install steps
-	#bin.install "sopy"
+	bin.install "sopy"
   end
 
   test do
