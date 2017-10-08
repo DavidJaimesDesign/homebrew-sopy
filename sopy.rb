@@ -4,7 +4,7 @@
 
 class Sopy < Formula
   desc "A CLI tool for searching Stack Overflow"
-  homepage "https://github.com/DavidJaimesDesign/SearchSOpy/"
+  homepage "https://github.com/DavidJaimesDesign/homebrew-sopy/"
   version "1.0.0"
 
   url "https://github.com/DavidJaimesDesign/homebrew-sopy/archive/0.2.tar.gz"
