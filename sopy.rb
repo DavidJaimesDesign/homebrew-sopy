@@ -32,7 +32,7 @@ class Sopy < Formula
     #                      "--prefix=#{prefix}"
     ## system "cmake", ".", *std_cmake_args
     #system "make", "install" # if this fails, try separate make/make install steps
-	bin.install "sopy"
+	#bin.install "sopy"
   end
 
   test do
