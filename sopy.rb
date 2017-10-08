@@ -7,8 +7,8 @@ class Sopy < Formula
   homepage "https://github.com/DavidJaimesDesign/homebrew-sopy/"
   version "1.0.0"
 
-  url "https://github.com/DavidJaimesDesign/homebrew-sopy/archive/0.2.tar.gz"
-  version "0.2.0"
+  url "https://github.com/DavidJaimesDesign/homebrew-sopy/archive/0.2.1.tar.gz"
+  version "0.2.1"
   #sha256 "4cf2e80427ac4ad3581ce62e722eb17cebd6405f81095755bde2bdd88c26fc65"
 
   depends_on :python
