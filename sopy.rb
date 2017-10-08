@@ -31,8 +31,7 @@ class Sopy < Formula
     #                      "--prefix=#{prefix}"
     ## system "cmake", ".", *std_cmake_args
     #system "make", "install" # if this fails, try separate make/make install steps
-	libexec.install "so"
-	bin.install_symlink libexec/"so" => "so"
+	bin.install "sopy"
   end
 
   test do
