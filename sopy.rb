@@ -22,7 +22,7 @@ class Sopy < Formula
   #system "python", *Language::Python.setup_install_args(prefix)
 
   def install
-    virtualenv_install_with_resources 
+    #virtualenv_install_with_resources 
 	  # ENV.deparallelize  # if your formula fails when building in parallel
 
     # Remove unrecognized options if warned by configure
