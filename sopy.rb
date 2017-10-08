@@ -12,14 +12,13 @@ class Sopy < Formula
   #sha256 "4cf2e80427ac4ad3581ce62e722eb17cebd6405f81095755bde2bdd88c26fc65"
 
   depends_on :python
-  
-  #resource "pyperclip" do
-  #  url "https://files.pythonhosted.org/packages/7b/a5/48eaa1f2d77f900679e9759d2c9ab44895e66e9612f7f6b5333273b68f29/pyperclip-1.5.27.zip"
-  #  sha256 "a3cb6df5d8f1557ca8fc514d94fabf50dc5a97042c90e5ba4f3611864fed3fc5"
-  #end
+
+  resource "docopt" do
+    url "https://files.pythonhosted.org/packages/ec/6d/8ef19316f3b06c15ac648c857d18f171a65b50319f0a6c782392ad62d942/docopt-0.6.1.tar.gz"
+	sha256 "71ad940a773fbc23be6093e9476ad57b2ecec446946a28d30127501f3b29aa35"
+  end	  
 
   include Language::Python::Virtualenv
-  #system "python", *Language::Python.setup_install_args(prefix)
 
   def install
 	  # ENV.deparallelize  # if your formula fails when building in parallel
@@ -31,6 +30,7 @@ class Sopy < Formula
     #                      "--prefix=#{prefix}"
     ## system "cmake", ".", *std_cmake_args
     #system "make", "install" # if this fails, try separate make/make install steps
+	virtualenv_install_with_resources
 	libexec.install "so"
 	bin.install_symlink libexec/"so" => "so"
   end
