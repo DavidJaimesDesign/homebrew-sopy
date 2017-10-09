@@ -5,9 +5,9 @@
 class Sopy < Formula
   desc "A CLI tool for searching Stack Overflow"
   homepage "https://github.com/DavidJaimesDesign/homebrew-sopy/"
-  version "0.2.4"
+  version "0.2.5"
 
-  url "https://github.com/DavidJaimesDesign/homebrew-sopy/archive/0.2.4.tar.gz"
+  url "https://github.com/DavidJaimesDesign/homebrew-sopy/archive/0.2.5.tar.gz"
   #sha256 "4cf2e80427ac4ad3581ce62e722eb17cebd6405f81095755bde2bdd88c26fc65"
 
   depends_on :python
@@ -29,9 +29,14 @@ class Sopy < Formula
     #                      "--prefix=#{prefix}"
     ## system "cmake", ".", *std_cmake_args
     #system "make", "install" # if this fails, try separate make/make install steps
-	virtualenv_install_with_resources
     #libexec.install "so"
     #bin.install_symlink libexec/"so" => "so"
+	venv = virtualenv_create(libexec)
+    %w[docopt].each do |r|
+       venv.pip_install resource(r)
+    end
+    venv.pip_install_and_link buildpath
+
     bin.install "so"
   end
 

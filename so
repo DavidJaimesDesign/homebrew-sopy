@@ -28,7 +28,7 @@ def main(args):
     webbrowser.open('https://stackoverflow.com/search?q=' + query)
 
 if __name__=='__main__':
-    arguments = docopt(__doc__, version='Sopy 0.2.0')
+    arguments = docopt(__doc__, version='Sopy 0.2.4')
     main(arguments["<searchTerms>"])
 
 
