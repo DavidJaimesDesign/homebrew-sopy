@@ -5,9 +5,9 @@
 class Sopy < Formula
   desc "A CLI tool for searching Stack Overflow"
   homepage "https://github.com/DavidJaimesDesign/homebrew-sopy/"
-  version "0.2.5"
+  version "0.2.6"
 
-  url "https://github.com/DavidJaimesDesign/homebrew-sopy/archive/0.2.5.tar.gz"
+  url "https://github.com/DavidJaimesDesign/homebrew-sopy/archive/0.2.6.tar.gz"
   #sha256 "4cf2e80427ac4ad3581ce62e722eb17cebd6405f81095755bde2bdd88c26fc65"
 
   depends_on :python
@@ -20,22 +20,14 @@ class Sopy < Formula
   include Language::Python::Virtualenv
 
   def install
-	  # ENV.deparallelize  # if your formula fails when building in parallel
-
-    # Remove unrecognized options if warned by configure
-    #system "./configure", "--disable-debug",
-    #                      "--disable-dependency-tracking",
-    #                      "--disable-silent-rules",
-    #                      "--prefix=#{prefix}"
-    ## system "cmake", ".", *std_cmake_args
-    #system "make", "install" # if this fails, try separate make/make install steps
     #libexec.install "so"
     #bin.install_symlink libexec/"so" => "so"
-	venv = virtualenv_create(libexec)
+    ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python2.7/site-packages"
     %w[docopt].each do |r|
-       venv.pip_install resource(r)
+      resource(r).stage do
+          system "python", *Language::Python.setup_install_args(libexec/"vendor")
+      end
     end
-    venv.pip_install_and_link buildpath
 
     bin.install "so"
   end
