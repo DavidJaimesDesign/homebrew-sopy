@@ -4,7 +4,7 @@ class Sopy < Formula
   version "1.0.0"
 
   url "https://github.com/DavidJaimesDesign/homebrew-sopy/archive/1.0.0.tar.gz"
-  #sha256 "4cf2e80427ac4ad3581ce62e722eb17cebd6405f81095755bde2bdd88c26fc65"
+  sha256 "5927ce1c2d42eda44962085410d49362f1d53c0c875b4d4ac9e941aff2c58b81"
 
   depends_on :python
 
