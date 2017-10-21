@@ -25,6 +25,5 @@ Here is a list of the guides used that will need to be reference when updating t
 * [Stack Overflow thread about adding scripts to bin](https://stackoverflow.com/questions/6967331/how-do-i-install-a-script-to-run-anywhere-from-the-command-line)
 
 # Coming Soon
-* Docopts-needed for actual launch
 * cool search parameters for advanced search 
 
