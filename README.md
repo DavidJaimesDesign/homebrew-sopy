@@ -7,9 +7,8 @@
 
 # Usage
 
-To use the tool simply run `so your search terms here` This will open a new browser windo to the Stack Overflow search results
-
-*note:* This tool is still is an alpha state and does not have all the validation needed if you try to break it you will probably succeed 
+To use the tool simply run `so your search terms here` This will open a new browser windo to the Stack Overflow search results.
+It uses docopts so you can pass `so -h` or `so --help` for detailed usage instructions. 
 
 # Debugging
 

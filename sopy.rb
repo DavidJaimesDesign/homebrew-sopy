@@ -1,13 +1,9 @@
-# Documentation: https://docs.brew.sh/Formula-Cookbook.html
-#                http://www.rubydoc.info/github/Homebrew/brew/master/Formula
-# PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
-
 class Sopy < Formula
   desc "A CLI tool for searching Stack Overflow"
   homepage "https://github.com/DavidJaimesDesign/homebrew-sopy/"
-  version "0.2.6"
+  version "1.0.0"
 
-  url "https://github.com/DavidJaimesDesign/homebrew-sopy/archive/0.2.6.tar.gz"
+  url "https://github.com/DavidJaimesDesign/homebrew-sopy/archive/1.0.0.tar.gz"
   #sha256 "4cf2e80427ac4ad3581ce62e722eb17cebd6405f81095755bde2bdd88c26fc65"
 
   depends_on :python
@@ -20,8 +16,6 @@ class Sopy < Formula
   include Language::Python::Virtualenv
 
   def install
-    #libexec.install "so"
-    #bin.install_symlink libexec/"so" => "so"
     ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python2.7/site-packages"
     %w[docopt].each do |r|
       resource(r).stage do
@@ -33,15 +27,7 @@ class Sopy < Formula
   end
 
   test do
-    # `test do` will create, run in and delete a temporary directory.
-    #
-    # This test will fail and we won't accept that! For Homebrew/homebrew-core
-    # this will need to be a test that verifies the functionality of the
-    # software. Run the test with `brew test master`. Options passed
-    # to `brew install` such as `--HEAD` also need to be provided to `brew test`.
-    #
-    # The installed folder is not in the path, so use the entire path to any
-    # executables being tested: `system "#{bin}/program", "do", "something"`.
-    #system "false"
+    system bin/"so", "--version"
+	assert_equal "1.0.0"
   end
 end
